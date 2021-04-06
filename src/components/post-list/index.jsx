@@ -1,5 +1,6 @@
 import React from 'react';
 import { PostItem } from '../';
+import './style.css';
 
 const PostList = () => {
   return (

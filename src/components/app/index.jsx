@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header, SearchPanel, PostFilter, PostList, PostAddForm } from '../';
+import './style.css';
 
 const App = () => {
   return (
