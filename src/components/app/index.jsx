@@ -3,6 +3,13 @@ import { Header, SearchPanel, PostFilter, PostList, PostAddForm } from '../';
 import './style.css';
 
 const App = () => {
+
+  const data = [
+    {id: 1, label: 'Hello World', important: false },
+    {id: 2, label: 'Some Text', important: false },
+    {id: 3, label: 'New Text', important: true },
+  ]
+
   return (
     <div className='app'>
       <Header />
@@ -10,7 +17,7 @@ const App = () => {
         <SearchPanel />
         <PostFilter />
       </div >
-      <PostList />
+      <PostList posts={data} />
       <PostAddForm />
     </div>
   )
