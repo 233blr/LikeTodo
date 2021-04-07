@@ -1,13 +1,30 @@
 import React from 'react';
-import './style.css';
+import styled from 'styled-components';
 
-const Header = () => {
+const Header = styled.div`
+display: flex;
+align-items: flex-end;
+  justify-content: space-between;
+  h1 {
+    font-size: 26px;
+    :hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  h2 {
+    font-size: 1.2rem;
+  color: grey;
+  }
+`
+
+const AppHeader = () => {
   return (
-    <div className='app-header d-flex'>
+    <Header>
       <h1>Account Name</h1>
       <h2>counts</h2>
-    </div>
+    </Header>
   )
 }
 
-export default Header;
+export default AppHeader;
