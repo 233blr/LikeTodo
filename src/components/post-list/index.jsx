@@ -2,12 +2,13 @@ import React from 'react';
 import { PostItem } from '../';
 import './style.css';
 
-const PostList = () => {
+const PostList = ({ posts }) => {
   return (
     <ul className='app-list list-group'>
-      <PostItem />
-      <PostItem />
-      <PostItem />
+      {posts && posts.map(post => {
+        const { id, ...postProps } = post;
+        return <li key={id} className='list-group-item'><PostItem {...postProps} /></li>
+      })}
     </ul>
   )
 }
