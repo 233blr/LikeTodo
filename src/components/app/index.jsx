@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header, SearchPanel, PostFilter, PostList, PostAddForm } from '../';
+import { v4 as uuidv4 } from 'uuid';
 import './style.css';
 
 export default class App extends Component {
@@ -15,6 +16,7 @@ export default class App extends Component {
       ],
     };
     this.onDeletePost = this.onDeletePost.bind(this);
+    this.addItem = this.addItem.bind(this);
   }
 
   onDeletePost = id => {
@@ -23,9 +25,20 @@ export default class App extends Component {
       const arr = [...data];
       arr.splice(i, 1);
       return {
-        data: [...arr]
+        data: arr
       }
     })
+  }
+
+  addItem = (text) => {
+    const newPost = { id: uuidv4(), label: text, important: false };
+    this.setState(({ data }) => {
+      return {
+        data: [...data, newPost]
+      }
+    }
+    )
+    console.log(text)
   }
 
   render() {
@@ -39,7 +52,7 @@ export default class App extends Component {
       <PostList
         posts={this.state.data}
         onDelete={this.onDeletePost} />
-      <PostAddForm />
+      <PostAddForm onAdd={this.addItem} />
     </div>
   )
 }
