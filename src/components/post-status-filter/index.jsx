@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const PostFilter = () => {
   return (
     <div className='btn-group'>
-      <button type='button' className='btn btn-info'>Все</button>
-      <button type='button' className='btn btn-outline-secondary'>Понравилось</button>
+      <Button outline color='primary'>Все</Button>
+      <Button outline color="info">Понравилось</Button>
     </div>
   )
 }
