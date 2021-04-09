@@ -39,5 +39,5 @@
   text-decoration: line-through;
 }
 .app-list-item.important .btn-star {
-  color: red;
+  color: #ffc107;
 }
