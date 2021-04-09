@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 
-const PostFilter = () => {
-  return (
-    <div className='btn-group'>
-      <Button outline color='primary'>All</Button>
-      <Button outline color="info">Completed</Button>
-    </div>
-  )
-}
+export default class PostFilter extends Component {
+  constructor(props) {
+    super(props);
+    this.buttons = ['Important', 'Completed', 'All'];
+  }
 
-export default PostFilter;
+  render() {
+    const buttons = this.buttons.map(item => {
+      const clazz = this.props.filter === item ? 'btn-success' : 'btn-light';
+      return <Button className={`btn ${clazz}`} key={item} onClick={() => this.props.onToggleFilter(item)}>{item}</Button>;
+    });
+
+    return <div className='btn-group'>{buttons}</div>
+  };
+};
