@@ -1,56 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css';
 
-class PostItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      important: false,
-      like: false
-    };
-    this.onImportant = this.onImportant.bind(this);
-    this.onLike = this.onLike.bind(this);
-  }
-
-  onImportant() {
-    this.setState(({ important }) => ({
-      important: !important,
-    }))
-  }
-
-  onLike() {
-    this.setState(({ like }) => ({
-      like: !like,
-    }))
-  }
-
-  render() {
-    const { label, onDelete } = this.props;
-    const { important, like } = this.state;
-
-    let classNames = 'app-list-item d-flex justify-content-between';
-    if (important) classNames += ' important';
-    if (like) classNames += ' like';
+const PostItem = ({ title, important, completed, onDelete, onToggleCompleted, onToggleImportant }) => {
+  let classNames = 'app-list-item d-flex justify-content-between';
+  if (important) classNames += ' important';
+  if (completed) classNames += ' like';
 
     return (
       <div className={classNames}>
         <span className='app-list-item-label'>
-          {label}
+          {title}
         </span>
         <div className='d-flex justify-content-center align-items-center'>
-          <button type='button' className='btn-star btn-sm' onClick={this.onImportant}>
+          <button type='button' className='btn-star btn-sm' onClick={onToggleImportant}>
             <i className='fa fa-star'></i>
           </button>
-          <button type='button' className='btn-like btn-sm' onClick={this.onLike}>
-            <i className='fa fa-heart'></i>
+          <button type='button' className='btn-like btn-sm' onClick={onToggleCompleted}>
+            <i className='fa fa-check'></i>
           </button>
           <button type='button' className='btn-trash btn-sm' onClick={onDelete}>
-            <i className='fa fa-trash-o'></i>
+            <i className='fa fa-times'></i>
           </button>
         </div>
       </div>
     )
-  }
 }
 
 export default PostItem;
