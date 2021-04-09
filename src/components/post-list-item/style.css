@@ -17,7 +17,7 @@
     color: #fff;
 }
 .app-list-item .btn-trash:hover {
-  color: #000;
+  color: red;
 }
 .fa-check:hover{
   cursor: pointer;
