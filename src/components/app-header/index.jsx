@@ -18,11 +18,11 @@ align-items: flex-end;
   }
 `
 
-const AppHeader = () => {
+const AppHeader = ({ tasksCounter, completedTasksCounter }) => {
   return (
     <Header>
       <h1>Account Name</h1>
-      <h2>counts</h2>
+      <h2>{tasksCounter} tasks, {completedTasksCounter} completed</h2>
     </Header>
   )
 }

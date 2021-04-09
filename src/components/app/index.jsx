@@ -13,7 +13,7 @@ export default class App extends Component {
         { id: 3, title: 'Hello World', important: false, completed: true },
         { id: 4, title: 'Hello World', important: false, completed: false },
         { id: 5, title: 'Hello World', important: false, completed: false },
-        { id: 6, title: 'Hello World', important: false, completed: false },
+        { id: 6, title: 'Hello World', important: false, completed: true },
         { id: 7, title: 'Hello World', important: false, completed: false },
       ],
     };
@@ -59,7 +59,9 @@ export default class App extends Component {
   render() {
   return (
     <div className='app'>
-      <Header />
+      <Header
+        tasksCounter={this.state.data.length}
+        completedTasksCounter={this.state.data.filter(item => item.completed).length} />
       <div className='search-panel d-flex'>
         <SearchPanel />
         <PostFilter />
