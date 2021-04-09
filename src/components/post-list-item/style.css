@@ -17,7 +17,7 @@
     color: #fff;
 }
 .app-list-item .btn-trash:hover {
-  color: red;
+  color: #000;
 }
 .fa-check:hover{
   cursor: pointer;
@@ -39,5 +39,5 @@
   text-decoration: line-through;
 }
 .app-list-item.important .btn-star {
-  color: #ffc107;
+  color: red;
 }
