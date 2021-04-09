@@ -13,13 +13,13 @@
     box-shadow: none;
     outline: none;
 }
-.app-list-item .btn-star, .fa-heart {
+.app-list-item .btn-star, .fa-check, .btn-trash {
     color: #fff;
 }
-.app-list-item .btn-trash {
-    color: #000;
+.app-list-item .btn-trash:hover {
+  color: red;
 }
-.fa-heart:hover{
+.fa-check:hover{
   cursor: pointer;
 }
 .app-list-item-label {
@@ -29,12 +29,15 @@
   user-select: none;
   transition: 0.5s all;
 }
-.app-list-item.like .fa-heart {
-  color: red;
+.app-list-item.like .fa-check {
+  color: #28a745;
 }
 .app-list-item.important .app-list-item-label {
   text-decoration: underline;
 }
+.app-list-item.like .app-list-item-label {
+  text-decoration: line-through;
+}
 .app-list-item.important .btn-star {
-  color: #FFD700;
+  color: #ffc107;
 }
