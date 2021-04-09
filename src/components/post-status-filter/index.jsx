@@ -4,8 +4,8 @@ import { Button } from 'reactstrap';
 const PostFilter = () => {
   return (
     <div className='btn-group'>
-      <Button outline color='primary'>Все</Button>
-      <Button outline color="info">Понравилось</Button>
+      <Button outline color='primary'>All</Button>
+      <Button outline color="info">Completed</Button>
     </div>
   )
 }

@@ -15,8 +15,8 @@ input {
 const PostAddForm = ({ onAdd }) => {
   return (
     <PostForm>
-      <input type='text' placeholder='О чём думаешь?' className='form-control' />
-      <Button type='submit' outline color="success" onClick={() => onAdd('hi')}>Добавить</Button>
+      <input type='text' placeholder='Add task...' className='form-control' />
+      <Button type='submit' outline color="success" onClick={() => onAdd('hi')}>Add</Button>
     </PostForm>
   )
 }
